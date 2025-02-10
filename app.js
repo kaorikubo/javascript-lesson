@@ -89,3 +89,43 @@ console.log(x + 'を' + y + 'で割った余りは' + result + 'です');
 // Q10 スコープ
 // Javascriptではスコープ及び変数や関数がアクセスできる範囲が決まっているため、このxはすでに上記の関数の中で定義されている変数なので、上記の関数からしか参照できない。
 
+// 応用編問題
+// Q1 標準組み込みオブジェクト
+let number = Math.floor(Math.random() * 10);
+console.log(number);
+
+// Q2 コールバック関数
+setTimeout(function(){
+  console.log('Hello World!');
+}, 3000);
+
+// Q3 if
+let num = 2;
+if (num > 0) {
+  console.log('num is greater than 0');
+} else if (num < 0) {
+  console.log('num is less than 0');
+} else if (num === 0) {
+  console.log('num is 0');
+}
+
+// Q4 for
+let numbers = [];
+for (let i = 0; i <= 99; i++){
+  numbers.push(i);
+}
+console.log(numbers);
+
+// Q5 for × if
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+for ($i = 0; $i < 10; $i++) {
+  if ($i % 2 === 0) {
+    console.log('even');
+  }
+  else if ($i % 2 === 1) {
+    console.log('odd');
+  }
+  else  {
+    console.log('not number');
+  }
+}
