@@ -1,13 +1,15 @@
 //  Q1　変数
 let nickname = 'かおりちゃん';
 let age = 29;
-let msg = `私のニックネームは${nickname}です。年齢は${age}歳です。`;
+let msg = '私のニックネームは' + nickname + 'です。年齢は' + age + '歳です。';
 console.log(msg);
 
 // Q2 配列
 let languages = ['JavaScript', 'PHP', 'Ruby', 'Python', 'Go'];
 let msg2 = `私の好きな言語は${languages[0]}です。次は${languages[3]}を勉強してみたいです。`;
 console.log(msg2);
+// テンプレートリテラル : バッククオートを使う、改行可能、変数の埋め込み可能
+
 
 // Q3 オブジェクト
 let user = {
@@ -41,8 +43,9 @@ let playerList = [
 console.log(playerList[1].favorites[1]);
 
 // Q5 四則演算
-let aveAge = (playerList[0].age + playerList[1].age + playerList[2].age) / 3;
+let aveAge = (playerList[0].age + playerList[1].age + playerList[2].age) / playerList.length;
 console.log(aveAge);
+
 
 // Q6 関数 
 function sayHello() {
@@ -63,6 +66,7 @@ user.birthday = '2000-09-27';
 user.sayHello = function() {
   console.log("Hello!");
 }
+user.sayHello();
 
 // Q8 引数
 let calc = {
@@ -95,9 +99,12 @@ let number = Math.floor(Math.random() * 10);
 console.log(number);
 
 // Q2 コールバック関数
+function doFunc(callback){
 setTimeout(function(){
   console.log('Hello World!');
 }, 3000);
+}
+doFunc();
 
 // Q3 if
 let num = 2;
@@ -118,14 +125,18 @@ console.log(numbers);
 
 // Q5 for × if
 let mixed = [4, '2', 5, '8', '9', 0, 1];
-for ($i = 0; $i < 10; $i++) {
-  if ($i % 2 === 0) {
+
+for (let i = 0; i < mixed.length; i++){
+  let value = mixed[i];
+
+if (typeof value === 'number') {
+  if (value % 2 === 0){
     console.log('even');
-  }
-  else if ($i % 2 === 1) {
+  } else {
     console.log('odd');
   }
-  else  {
-    console.log('not number');
-  }
+}
+else {
+  console.log('not number');
+}
 }
