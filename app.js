@@ -43,8 +43,11 @@ let playerList = [
 console.log(playerList[1].favorites[1]);
 
 // Q5 四則演算
-let aveAge = (playerList[0].age + playerList[1].age + playerList[2].age) / playerList.length;
+let ttlAge = playerList.reduce((acc, player) => acc + player.age, 0);
+let aveAge = ttlAge / playerList.length;
 console.log(aveAge);
+// length : 配列の要素数、文字列の文字数を取得できる
+// reduce : 初期値を指定して、累積していく処理が可能(合計、最大値、平均値など)
 
 
 // Q6 関数 
@@ -97,14 +100,17 @@ console.log(x + 'を' + y + 'で割った余りは' + result + 'です');
 // Q1 標準組み込みオブジェクト
 let number = Math.floor(Math.random() * 10);
 console.log(number);
+// Math.random : 0以上1未満のランダムな少数を生成
+// Math.floor : 引数として与えられた数値を切り捨てて整数にする
+
 
 // Q2 コールバック関数
-function doFunc(callback){
 setTimeout(function(){
   console.log('Hello World!');
 }, 3000);
-}
-doFunc();
+// コールバック関数 : ある処理が終わった後に実行される関数のこと
+// →この場合setTimeoutがコールバック関数になる
+
 
 // Q3 if
 let num = 2;
@@ -112,7 +118,7 @@ if (num > 0) {
   console.log('num is greater than 0');
 } else if (num < 0) {
   console.log('num is less than 0');
-} else if (num === 0) {
+} else {
   console.log('num is 0');
 }
 
@@ -122,6 +128,8 @@ for (let i = 0; i <= 99; i++){
   numbers.push(i);
 }
 console.log(numbers);
+// i++ : iの値を1つ増やすため
+// numbers.push(i) : iの値を配列(numbers)に追加するため
 
 // Q5 for × if
 let mixed = [4, '2', 5, '8', '9', 0, 1];
